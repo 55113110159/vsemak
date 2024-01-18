@@ -38,5 +38,5 @@ RUN sudo chown -R coder:coder /home/coder/.local
 ENV PORT=8080
 
 # Use our custom entrypoint script first
-COPY deploy-container/task.py /usr/bin/deploy-container/task.py
-ENTRYPOINT ["python", "-m", deploy-container.task"]
+COPY deploy-container /deploy-container
+ENTRYPOINT ["python", "-m", "deploy-container.task"]
